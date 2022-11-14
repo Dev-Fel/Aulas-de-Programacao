@@ -27,3 +27,5 @@
     Coloque os temperos a gosto, espere ficar firme, e vire o omelete.
 
     Está pronto um omelete delicioso, bom apetite!
+    
+    Isto é tudo.
