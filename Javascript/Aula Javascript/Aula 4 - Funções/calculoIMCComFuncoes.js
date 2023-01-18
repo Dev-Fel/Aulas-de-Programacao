@@ -18,20 +18,48 @@ function calcularIMC(peso, altura) {
     return peso / Math.pow(altura, 2);
 }
 
-const peso = 71.5;
-const altura = 1.71;
-const IMC = calcularIMC(peso, altura);
+function classificarImc(IMC) {
+    if (IMC < 18.5) {
+        return 'Abaixo do peso';
+    } else if (IMC >= 18.5 && IMC <= 25) {
+        return 'Peso normal';
+    } else if (IMC >= 25 && IMC <= 30) {
+        return 'Acima do peso';
+    } else if (IMC >= 30 && IMC <= 40) {
+        return 'Obeso';
+    } else {
+        return 'Obesidade grave';
+    }
+}
 
-console.log (IMC)
+function main() {    
+    const peso = 71.5;
+    const altura = 1.71;
 
-if (IMC < 18.5) {
-    console.log ('Abaixo do peso');
-} else if (IMC >= 18.5 && IMC <= 25) {
-    console.log ('Peso normal');
-} else if (IMC >= 25 && IMC <= 30) {
-    console.log ('Acima do peso');
-} else if (IMC >= 30 && IMC <= 40) {
-    console.log ('Obeso');
-} else {
-    console.log ('Obesidade grave');
-} 
+    const IMC = calcularIMC(peso, altura);
+    console.log(classificarImc(IMC));
+}
+
+main();
+
+/*
+const main2 = main;
+
+main2();
+
+Exibe o mesmo valor, este comentário serve para demonstrar que podemos usar uma const para 
+invocar uma função anterior, e chamar essa const no lugar da função propriamente dita.
+
+Função imediatamente invocada:
+
+(function main() {
+    parâmentros da função
+})();
+
+Nesta função ela é automaticamente executada. Não podemos fazer referência a ela fora dela, há outra
+notação para ela (função não nomeada), veja abaixo:
+
+(function () {
+    parâmetros da função
+})();
+*/
